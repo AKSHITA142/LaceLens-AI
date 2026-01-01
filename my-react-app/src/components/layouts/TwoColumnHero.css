@@ -1,0 +1,44 @@
+.two-hero {
+  min-height: calc(100vh - 180px);
+  display: flex;
+  align-items: center;
+  background: #faf7f2;
+}
+
+.two-hero-inner {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 80px;
+  gap: 60px;
+}
+
+.two-hero-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* LEFT */
+.two-hero-text h1 {
+  font-size: 56px;
+  margin-bottom: 12px;
+  color: #1f2937;
+}
+
+.two-hero-text p {
+  font-size: 18px;
+  color: #4b5563;
+}
+
+/* RIGHT */
+.two-hero-visual {
+  background: #f0ede7;   /* TEMP visual fill */
+  border-radius: 8px;
+  min-height: 300px;
+}
+
+.site-body,
+.navbar,
+.footer {
+  width: 100%;
+}

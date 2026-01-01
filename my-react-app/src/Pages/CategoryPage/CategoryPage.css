@@ -1,0 +1,56 @@
+.category-page {
+  padding: 4rem 5rem;
+  background: #faf7f2;
+}
+
+.category-page h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+  color: #1f2937;
+}
+
+/* GRID: 3 cards per row */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.2rem;
+}
+
+/* CARD */
+.category-item {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.category-item img {
+  width: 100%;
+  height: 240px;
+  object-fit: contain;         /* 🔑 no cropping */
+  border-radius: 12px;
+  background: #f8f8f8;
+}
+
+
+.category-item:hover {
+  transform: translateY(-5px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-page {
+    padding: 3rem 1.5rem;
+  }
+}

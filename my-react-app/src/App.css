@@ -1,0 +1,26 @@
+.page-wrapper {
+  min-height: calc(100vh - 180px); /* navbar + footer */
+  background: #faf7f2;
+  padding: 80px 60px;
+}
+
+/* PAGE TITLE AREA */
+.page-header {
+  margin-bottom: 60px;
+}
+
+.page-header h1 {
+  font-size: 48px;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.page-header p {
+  font-size: 16px;
+  color: #6b7280;
+}
+
+/* PAGE CONTENT */
+.page-content {
+  min-height: 300px; /* prevents ugly collapse */
+}

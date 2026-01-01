@@ -1,0 +1,39 @@
+.scan-results {
+  margin-top: 4rem;
+  padding: 0 6rem;
+}
+
+.scan-results-title {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #1f2937;
+}
+
+/* GRID WHEN RESULTS EXIST */
+.scan-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+/* NO RESULTS UI */
+.scan-no-results {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #f5f2ec;
+  border-radius: 16px;
+}
+
+.scan-no-results p {
+  font-size: 20px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.scan-no-results span {
+  font-size: 15px;
+  color: #6b7280;
+}
+

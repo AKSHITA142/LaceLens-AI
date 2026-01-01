@@ -1,0 +1,34 @@
+.products {
+  background: transparent;
+}
+
+.products h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+/* Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+}
+.products {
+  background: transparent;
+}
+
+.products h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.product-section {
+  width: 100%;
+  padding: 4rem 6rem;
+}
+.product-section {
+  width: 100%;
+  padding: 5rem 6rem;   /* spacing from sides */
+}
+.home-page {
+  width: 100%;
+  display: block;   /* THIS FIXES SIDE-BY-SIDE ISSUE */
+}

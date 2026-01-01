@@ -1,0 +1,99 @@
+.scan-lace {
+  padding: 4rem 6rem;
+  background: #faf7f2;
+  text-align: center;
+}
+
+.scan-lace h2 {
+  font-size: 40px;
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+}
+
+.scan-lace p {
+  color: #6b7280;
+  margin-bottom: 2.5rem;
+}
+
+/* Upload Box */
+.scan-box {
+  border: 2px dashed #cbd5e1;
+  border-radius: 20px;
+  padding: 4rem;
+  margin: 0 auto 2rem;
+  max-width: 520px;
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Button */
+.scan-btn {
+  background: #0f172a;
+  color: white;
+  padding: 0.9rem 2.5rem;
+  border-radius: 999px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 3rem;
+}
+
+/* Accordion */
+.results-wrapper {
+  margin-top: 3rem;
+}
+
+.accordion-toggle {
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+/* Results Grid */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 2rem;
+  animation: slideDown 0.4s ease;
+}
+.scan-hero {
+  padding: 4rem 6rem;
+  max-width: 900px;
+}
+
+.scan-upload {
+  margin: 1.5rem 0;
+  padding: 2.5rem;
+  border: 2px dashed #cbd5e1;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.scan-btn {
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.8rem;
+  border-radius: 999px;
+  background: #111827;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.scan-results {
+  margin-top: 60px; /* space AFTER hero */
+}
+/* Animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
