@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg17
+    container_name: sagaram-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: sagaram
+      POSTGRES_PASSWORD: sagaram123
+      POSTGRES_DB: sagaram_lace
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
