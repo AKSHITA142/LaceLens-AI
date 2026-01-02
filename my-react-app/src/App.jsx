@@ -12,6 +12,7 @@ import Sale from "./Pages/Sale"
 import Connect from "./Pages/Connect"
 import CategoryPage from "./Pages/CategoryPage/CategoryPage"
 import ScanResults from "./components/ScanLace/ScanResults";
+import UploadLace from "./pages/admin/UploadLace";
 
 export default function App() {
   return (
@@ -28,7 +29,7 @@ export default function App() {
           <Route path="/shop" element={<Shop />} />
           <Route path="/category/:slug" element={<CategoryPage />} />
           <Route path="/scan/results" element={<ScanResults />} />
-
+          <Route path="/admin/upload-lace" element={<UploadLace />} />
         </Route>
 
       </Routes>
