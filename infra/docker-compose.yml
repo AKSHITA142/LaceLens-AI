@@ -2,7 +2,6 @@ services:
   postgres:
     image: pgvector/pgvector:pg17
     container_name: sagaram-postgres
-    restart: always
     environment:
       POSTGRES_USER: sagaram
       POSTGRES_PASSWORD: sagaram123
@@ -10,7 +9,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - infra_pgdata:/var/lib/postgresql/data
 
 volumes:
-  pgdata:
+  infra_pgdata:
