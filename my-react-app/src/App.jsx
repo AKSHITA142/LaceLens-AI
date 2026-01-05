@@ -12,7 +12,7 @@ import Sale from "./Pages/Sale"
 import Connect from "./Pages/Connect"
 import CategoryPage from "./Pages/CategoryPage/CategoryPage"
 import ScanResults from "./components/ScanLace/ScanResults";
-import UploadLace from "./pages/admin/UploadLace";
+import UploadLace from "./Pages/admin/UploadLace";
 
 export default function App() {
   return (

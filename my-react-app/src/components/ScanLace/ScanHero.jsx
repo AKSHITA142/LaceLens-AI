@@ -1,19 +1,28 @@
 import { useState } from "react";
 import "./ScanHero.css";
 
-export default function ScanHero({ onFind }) {
+export default function ScanHero({ onSearch }) {
+  const [file, setFile] = useState(null);
   const [preview, setPreview] = useState(null);
 
   function handleUpload(e) {
-    const file = e.target.files[0];
-    if (file) {
-      setPreview(URL.createObjectURL(file));
+    const selected = e.target.files[0];
+    if (!selected) return;
+
+    setFile(selected);
+    setPreview(URL.createObjectURL(selected));
+  }
+
+  function handleFind() {
+    if (!file) {
+      alert("Please upload an image first");
+      return;
     }
+    onSearch(file); // 🔥 send image to parent
   }
 
   return (
     <section className="scan-hero">
-      {/* LEFT SIDE */}
       <div className="scan-left">
         <h2>Find Your Lace Instantly</h2>
         <p>Upload or scan your lace image to find similar designs</p>
@@ -24,16 +33,13 @@ export default function ScanHero({ onFind }) {
           ) : (
             <span>📷 Upload / Scan Lace</span>
           )}
-          <input type="file" accept="image/*" onChange={handleUpload} hidden />
+          <input type="file" accept="image/*" hidden onChange={handleUpload} />
         </label>
 
-        <button className="find-btn" onClick={onFind}>Find Similar Laces</button>
+        <button className="find-btn" onClick={handleFind}>
+          Find Similar Laces
+        </button>
       </div>
-
-      {/* RIGHT SIDE */}
-     
     </section>
   );
 }
-
-

@@ -2,10 +2,8 @@ services:
   postgres:
     image: pgvector/pgvector:pg17
     container_name: sagaram-postgres
-    environment:
-      POSTGRES_USER: sagaram
-      POSTGRES_PASSWORD: sagaram123
-      POSTGRES_DB: sagaram_lace
+    env_file:
+      - .env
     ports:
       - "5432:5432"
     volumes:
@@ -13,3 +11,4 @@ services:
 
 volumes:
   infra_pgdata:
+

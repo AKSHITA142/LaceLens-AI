@@ -4,15 +4,21 @@ from fastapi import FastAPI, UploadFile, File, Query, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import text
 
+
 from database import SessionLocal
 from models import Lace
 from embeddings import generate_image_embedding
 
-# --------------------------------------------------
+from fastapi.staticfiles import StaticFiles
+
+
+
+
 # App setup
-# --------------------------------------------------
 
 app = FastAPI()
+
+app.mount("/uploads", StaticFiles(directory="uploads"), name="uploads")
 
 UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
@@ -27,9 +33,9 @@ app.add_middleware(
 
 print("🚀 app.py loaded")
 
-# --------------------------------------------------
+
 # UPLOAD LACE
-# --------------------------------------------------
+
 
 @app.post("/api/lace/upload")
 async def upload_lace(
@@ -48,17 +54,49 @@ async def upload_lace(
 
         print(f"✅ Image saved at: {file_path}")
 
-        # Insert lace row
+
+        # Generate embedding
+        embedding = generate_image_embedding(file_path)
+        print(f"🧠 Embedding generated, length: {len(embedding)}")
+        
+        # 3️⃣ DUPLICATE CHECK (visual)
+        duplicate = db.execute(
+            text("""
+                SELECT
+                    l.id,
+                    l.name,
+                    l.image_path,
+                    e.embedding <-> (:embedding)::vector AS distance
+                FROM lace_embeddings e
+                JOIN laces l ON l.id = e.lace_id
+                ORDER BY distance
+                LIMIT 1
+            """),
+            {"embedding": embedding}
+        ).fetchone()
+
+        # Very strict threshold → visually identical
+        if duplicate and duplicate.distance < 0.03:
+            print("🛑 DUPLICATE LACE DETECTED")
+
+            if os.path.exists(file_path):
+                os.remove(file_path)
+
+            return {
+                "message": "Duplicate lace detected",
+                "existing_lace_id": duplicate.id,
+                "existing_image_path": duplicate.image_path,
+                "distance": float(duplicate.distance),
+                "similarity_percent": 100.0
+            }
+
+        # 4️⃣ Insert lace
         lace = Lace(name=name, image_path=file_path)
         db.add(lace)
         db.commit()
         db.refresh(lace)
 
         print(f"✅ Lace inserted with ID: {lace.id}")
-
-        # Generate embedding
-        embedding = generate_image_embedding(file_path)
-        print(f"🧠 Embedding generated, length: {len(embedding)}")
 
         # Insert embedding
         db.execute(
@@ -88,9 +126,8 @@ async def upload_lace(
     finally:
         db.close()
 
-# --------------------------------------------------
+
 # SEARCH LACE (EXACT + SIMILAR)
-# --------------------------------------------------
 
 @app.post("/api/lace/search")
 async def search_lace(
@@ -119,9 +156,9 @@ async def search_lace(
         results = []
         exact_lace_id = None
 
-        # --------------------------------------------------
+        
         # 1️⃣ EXACT MATCH (TOP-1 NEAREST)
-        # --------------------------------------------------
+        
 
         exact_match = db.execute(
             text("""
@@ -151,9 +188,9 @@ async def search_lace(
 
             print("🎯 EXACT MATCH FOUND")
 
-        # --------------------------------------------------
+        
         # 2️⃣ SIMILAR LACES
-        # --------------------------------------------------
+        
 
         remaining = top_k - len(results)
 
