@@ -20,6 +20,7 @@ export default function Navbar() {
         <NavLink to="/accessories">Accessories</NavLink>
         <NavLink to="/sale">Sale</NavLink>
         <NavLink to="/shop">Shop All</NavLink>
+        <NavLink to="/admin/upload-lace">Upload Lace</NavLink>
       </nav>
     </header>
   )

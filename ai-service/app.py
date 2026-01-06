@@ -132,7 +132,7 @@ async def upload_lace(
 @app.post("/api/lace/search")
 async def search_lace(
     image: UploadFile = File(...),
-    top_k: int = Query(5, ge=1, le=20)
+    top_k: int = Query(15, ge=1, le=50)
 ):
     db = SessionLocal()
     query_path = None
@@ -206,13 +206,14 @@ async def search_lace(
                     JOIN laces l ON l.id = e.lace_id
                     WHERE (:exact_id IS NULL OR l.id != :exact_id)
                     ORDER BY distance
-                    LIMIT :limit
+                    LIMIT :fetch_limit
                 """),
                 {
                     "query_embedding": query_embedding,
                     "exact_id": exact_lace_id,
-                    "limit": remaining
+                    "fetch_limit": max(remaining * 3, 30)
                 }
+
             ).fetchall()
 
             for row in similar_rows:
