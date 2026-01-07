@@ -3,7 +3,6 @@ import MainLayout from "./components/layouts/MainLayout"
 import ScrollToTop from "./components/ScrollToTop";
 import Shop from "./Pages/Shop"
 
-import Home from "./Pages/Home"
 import Laces from "./Pages/Laces"
 import Embroidery from "./Pages/Embroidery"
 import Zardosi from "./Pages/Zardosi"

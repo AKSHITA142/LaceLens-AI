@@ -34,7 +34,7 @@ export default function Home() {
 
     try {
       const res = await fetch(
-        "http://localhost:8001/api/lace/search?top_k=6",
+        "http://localhost:8001/api/lace/search?top_k=15",
         {
           method: "POST",
           body: formData,

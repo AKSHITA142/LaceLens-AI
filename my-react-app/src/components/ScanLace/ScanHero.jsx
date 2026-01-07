@@ -18,7 +18,7 @@ export default function ScanHero({ onSearch }) {
       alert("Please upload an image first");
       return;
     }
-    onSearch(file); // 🔥 send image to parent
+    onSearch(file); //  send image to parent
   }
 
   return (
