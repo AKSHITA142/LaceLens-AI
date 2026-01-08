@@ -24,7 +24,7 @@ export default function Home() {
     return () => clearInterval(timer);
   }, []);
 
-  // 🔥 BACKEND SEARCH CALL
+  //  BACKEND SEARCH CALL
   async function handleSearch(file) {
     setShowResults(true);
     setLoading(true);

@@ -132,7 +132,7 @@ async def upload_lace(
 @app.post("/api/lace/search")
 async def search_lace(
     image: UploadFile = File(...),
-    top_k: int = Query(15, ge=1, le=50)
+    top_k: int = Query(10, ge=1, le=50)
 ):
     db = SessionLocal()
     query_path = None
