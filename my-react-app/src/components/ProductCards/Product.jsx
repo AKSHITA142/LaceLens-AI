@@ -10,7 +10,7 @@ import Embro1 from "../../assets/Embroidary/Embro1.jpeg";
 import Setwise1 from "../../assets/Setwise/Setwise1.jpeg";
 import Crosia1 from "../../assets/Crosiya/Crosia1.jpeg";
 import Tissue1 from "../../assets/Tissue/Tissue1.jpeg";
-import Gpo1 from "../../assets/GPO/GPO1.jpeg";
+import GPO1 from "../../assets/GPO/GPO1.jpeg";
 import Jalar1 from "../../assets/Jalar/JALAR1.jpeg";
 
 const categories = [
@@ -65,8 +65,8 @@ const categories = [
     slug: "10",
   },
   {
-    title: "Gpo Lace",
-    image: Gpo1,
+    title: "GPO Lace",
+    image: GPO1,
     slug: "11",
   },
   {

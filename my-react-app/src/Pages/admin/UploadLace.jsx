@@ -1,4 +1,5 @@
 import { useState } from "react";
+import API_BASE_URL from "../../api";
 
 export default function UploadLace() {
   const [file, setFile] = useState(null);
@@ -18,7 +19,7 @@ export default function UploadLace() {
   formData.append("name", name);
 
   try {
-    const res = await fetch("http://localhost:8001/api/lace/upload", {
+    const res = await fetch(`${API_BASE_URL}/api/lace/upload`, {
       method: "POST",
       body: formData,
     });

@@ -1,5 +1,6 @@
 import "./ScanResults.css";
 import ProductCard from "../ProductCards/ProductCard";
+import API_BASE_URL from "../../api";
 
 export default function ScanResults({ results, loading }) {
   return (
@@ -17,7 +18,7 @@ export default function ScanResults({ results, loading }) {
           <ProductCard
             key={item.lace_id}
             title={`${item.name} (${item.similarity_percent}%)`}
-            image={`http://localhost:8001/${item.image_path}`}
+            image={`${API_BASE_URL}/${item.image_path}`}
             slug={item.lace_id}
           />
         ))}
