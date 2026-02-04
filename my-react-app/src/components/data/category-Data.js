@@ -108,16 +108,17 @@ import GPO7 from "../../assets/GPO/GPO7.jpeg";
 import GPO8 from "../../assets/GPO/GPO8.jpeg";
 import GPO9 from "../../assets/GPO/GPO9.jpeg";
 import GPO10 from "../../assets/GPO/GPO10.jpeg";
-import Jalar1 from "../../assets/Jalar/Jalar1.jpeg";
-import Jalar2 from "../../assets/Jalar/Jalar2.jpeg";
-import Jalar3 from "../../assets/Jalar/Jalar3.jpeg";  
-import Jalar4 from "../../assets/Jalar/Jalar4.jpeg";
-import Jalar5 from "../../assets/Jalar/Jalar5.jpeg";
-import Jalar6 from "../../assets/Jalar/Jalar6.jpeg";
-import Jalar7 from "../../assets/Jalar/Jalar7.jpeg";
-import Jalar8 from "../../assets/Jalar/Jalar8.jpeg";
-import Jalar9 from "../../assets/Jalar/Jalar9.jpeg";
-import Jalar10 from "../../assets/Jalar/Jalar10.jpeg";
+import Jalar1 from "../../assets/Jalar/JALAR1.jpeg";
+
+import Jalar2 from "../../assets/Jalar/JALAR2.jpeg";
+import Jalar3 from "../../assets/Jalar/JALAR3.jpeg";  
+import Jalar4 from "../../assets/Jalar/JALAR4.jpeg";
+import Jalar5 from "../../assets/Jalar/JALAR5.jpeg";
+import Jalar6 from "../../assets/Jalar/JALAR6.jpeg";
+import Jalar7 from "../../assets/Jalar/JALAR7.jpeg";
+import Jalar8 from "../../assets/Jalar/JALAR8.jpeg";
+import Jalar9 from "../../assets/Jalar/JALAR9.jpeg";
+import Jalar10 from "../../assets/Jalar/JALAR10.jpeg";
 
 export const categoryData = {
   1: {

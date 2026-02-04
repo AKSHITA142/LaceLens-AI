@@ -3,6 +3,7 @@ import "./ProductCard.css";
 
 export default function ProductCard({ title, image, slug }) {
   const navigate = useNavigate();
+  console.log("Product Cards");
 
   return (
     <div
